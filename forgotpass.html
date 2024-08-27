@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    main{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(3, 4, 36);
+    }
+    /* #brown{
+
+    } */
+    #brown{
+        position:relative ;
+        width: 400px;
+        height: 300px;
+        background: repeating-conic-gradient(from var(--a),#ff2770 0%,#ff2770 5%,transparent 5%,transparent 40%, #ff2770 50%);
+        animation: animate 4s linear infinite;
+        border-radius: 20px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @property --a{
+        syntax: '<angle>';
+            inherits: false;
+            initial-value: 0deg;
+    }
+    @keyframes animate{
+        0%
+        {
+            --a: 0deg;
+        }
+        100%{
+            --a: 360deg;
+        }
+    }
+    #brown::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-conic-gradient(from var(--a),#45f3ff 0%,#45f3ff 5%,transparent 5%,transparent 40%, #45f3ff 50%);
+        animation: animate 4s linear infinite;
+        animation-delay: -1s;
+        border-radius: 20px; z-index: 2;
+    }
+    #brown::after{
+        content: '';
+        position: absolute;
+        inset: 8px;
+        background: #2d2d39;
+        border-radius: 15px;
+        border: 8px solid #25252b; z-index: 2;
+        
+    }
+    #white{
+     height: 80%;
+     width: 80%;
+     background-color:#2d2d39;
+     border-radius: 20px;
+     z-index: 20000;
+     color: white;
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+gap: 20px;
+    }
+    #white div #cont{
+        padding: 10px;
+        border: 1px solid white;
+        width: 200px;
+        height: 16px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #white div #cont #p{
+font-style: italic;
+font-family: cursive;
+font-size: 24px;
+letter-spacing: 20px;
+padding-bottom: 7px;
+    }
+    #white div {
+        display: flex;
+        gap: 4px;
+
+    }
+    button{
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+        border: 1px solid white;
+        padding: 0px 10px 0px 10px;
+        border-radius: 4px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;font-size: 16px;
+    }
+    input{
+        width: 296px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left:10px;
+        padding-right: 10px;
+        outline:none ;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+    input::placeholder{
+        font-weight: 540;
+        font-size: 17px;
+       
+    }
+    
+    #white #star{
+        color: rgb(53, 139, 3);
+    }
+    #submit{
+        padding: 10px;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 3px;
+        font-size: 16px;
+        background: rgb(73,83,190);
+        background: linear-gradient(90deg, rgba(73,83,190,1) 32%, rgba(110,81,195,1) 76%, rgba(22,25,171,1) 100%);
+        border-radius: 4px;
+        width: 296px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left:10px;
+        padding-right: 10px;
+        outline:none ;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+    #p{
+        height: 0px;
+        width: 0px;
+        background-color: #2d2d39;
+    }
+   
+</style>
+<body>
+    <main>
+        <form action="" id="form">
+    <div id="brown">
+     <div id="white">
+        <input type="text" placeholder="Enter userId" id="check_id">
+        <input type="text" placeholder="Enter OTP" id="enter_otp"> 
+        <span><button id="otp">Generate OTP</button></span>
+        <button id="submit">submit</button>
+
+     </div>
+    </div>
+</form>
+</main>
+
+<script>
+  
+   
+
+    var otp2=document.getElementById("enter_otp")
+    var captcha,y,r;
+    let check_id=document.getElementById("check_id")
+
+    
+   
+   
+    document.getElementById("otp").addEventListener("click",(e)=>
+   {
+    e.preventDefault()
+
+    
+    if (!check_id.value=="" ) {
+   
+
+   let storeUserData = JSON.parse(localStorage.getItem("userData")) || []
+   
+   let user = storeUserData.find(user=> user.userId==check_id.value)
+   console.log(user);
+   if (user) {
+       
+   
+ alert(`your one time password is ${z}`) 
+   
+   
+   } 
+   else {
+       alert("User ID not found");
+   }
+   } 
+   else {
+   alert("Please provide user Id");
+   }
+   });
+
+
+  
+
+
+
+    document.getElementById("submit").addEventListener("click",(e)=>{
+      e.preventDefault()
+      
+     if( z==otp2.value)
+    {
+        
+        window.location.assign("changepass.html") 
+        otp2.innerHTML="";
+
+    }
+    else if(otp2.value=="")
+    {
+        alert("please enter captcha first")
+    }
+    else if( otp2.value!=z){
+
+        alert("invalid captha") 
+        otp2.innerHTML="";
+
+    }
+
+   }) 
+    
+
+
+
+function radomcaptha()
+{
+   var x;
+   captcha='';
+  
+    x="0123456789"
+
+     captcha=x[Math.floor(Math.random() * x.length)] 
+    for(var i=0;i<3;i++)
+    {
+        captcha=captcha+ x[Math.floor(Math.random() * x.length)]
+    }
+ 
+  return captcha;
+
+  captcha=""
+}
+let z=radomcaptha()
+    /* if(field.value==p.innerText)
+    {
+        alert("correct captha")
+        field.value="";
+        document.getElementById("star").innerText="*Please Enter Captcha Below"
+        document.getElementById("star").style.color="green"
+    }
+   
+    else{
+        alert("invalid captha") 
+        field.value="";
+        document.getElementById("star").innerText="*please enter the correct captcha"
+        document.getElementById("star").style.color="red"
+    }
+
+   }) */
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+class evil 
+{
+	public static void main(String[] args) 
+	{
+		int n=30;int rem;int count=0;
+
+		while(n!=0)
+		{
+         rem=n%2;
+		if(n%2==1)
+			{
+             count=count+1;
+			}
+
+			n=n/2;
+
+		}
+		if(count%2==0)
+		{
+   System.out.println("evil no");
+
+		}
+		else{
+System.out.println("not");
+
+		}
+	}
+}

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    main{
+        height: 100vh;
+        width: 100vw;
+        position: relative;
+    }
+    nav>b{
+font-size: 30px;
+color: white;
+    }
+    nav b>span{
+color:rgb(173, 173, 173);
+    }
+    nav>div{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        align-items: center;
+    }
+    nav>div>a{
+        text-decoration: none;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+    }
+    nav span>i{
+    font-size: 24px;
+    color: white;
+    
+    }
+    nav{
+        height: 70px;
+display: grid;
+grid-template-columns:1fr 6fr 1fr ;
+background-color: blueviolet;
+align-items: center;
+justify-items: center;
+
+    }
+
+    section{
+        display: grid;
+        grid-template-columns: 300px 1fr;
+        height: 88vh;
+      background-color: rgba(22, 21, 21, 0.699);
+    }
+
+    #right_side{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: beige;
+        align-items: center;
+        background: linear-gradient(rgba(0, 0, 0, 0.253),rgba(0, 0, 0, 0.418)),url("./image/main_div.avif") ;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+    }
+    #right_side>div{
+background-color: rgba(221, 221, 221, 0.87);
+height: 400px;
+width: 400px;
+border-radius: 14px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+gap: 40px;
+align-items: start;
+    }
+    #right_side>div>h1{
+        font-size: 34px;
+    }
+    #right_side>div>h1,p{
+        padding-left: 30px;
+    }
+    #right_side>div>button{
+        border-radius: 50px;
+        border: none;
+        padding: 8px 20px;
+        background-color: rgb(223, 152, 22);
+        position: relative;
+        left: 30px;
+        color: white;
+        font-size: 16px;
+        font-weight: 600;
+    }
+#left-side{
+    position: relative;
+    background-color: rgba(49, 49, 49, 0.808);
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 30px;
+}
+#enroll{
+    color: rgb(68, 135, 223);
+    font-weight: 500;
+}
+#left-side>#cross
+{
+  position: absolute;
+  left: 275px;
+  top: 0px;
+
+ 
+}
+#left-side>#cross>i{
+    font-size: 28px;
+    color: rgb(206, 206, 206);
+}
+#left-side>img{
+    height: 200px;
+    width: 200px;
+    border: 1px solid white;
+    align-self: center;
+    margin-top: 40px;
+
+}
+#left-side>#application,#signout{
+    padding: 10px;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    box-shadow: inset 0px 0px 10px rgba(165, 164, 164, 0.596);
+    
+}
+#left-side>#application,#signout>p{
+    color: white;
+    cursor: pointer;
+}
+#hi{
+    height:100vh;
+    width: 100vw;
+    left:0;
+    top:0;
+    background-color: rgb(24, 23, 23);
+    z-index: 2000;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#hi>#cross2{
+    position: absolute;
+    left: 90%;
+    top: 20px;
+}
+
+</style>
+<body>
+    <main>
+        <nav><b>Lo<span>go</span></b>
+        <div><a href="">Home</a><a href="">About</a><a href="">Services</a><a href="">About Us</a></div>
+    <span id="bar"><i class="fa-solid fa-bars"></i></span></nav>
+  
+<section id="one">
+    <div id="left-side">
+  <span id="cross"><i class="fa-solid fa-square-xmark"></i></span>
+<img src="" alt="" id="photo">
+  <h3 id="yr_name"></h3>
+<span id="application"><p>Goto application sform</p></span>
+<span id="signout"><p>Signout</p></span>
+
+
+    </div>
+    <div id="right_side">
+        <div>
+        <h1>Apply For Cources</h1>
+        <p id="enroll">More than 2000+ studends enrolled</p>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea cupiditate architecto, modi blanditiis dicta possimus tempore quasi doloribus?</p>
+         <button>Read More</button>
+        </div>
+    </div>
+</section>
+    <div id="hi"><span id="cross2"><i class="fa-solid fa-square-xmark"></i></span><h1 id="name_blank"></h1></div>
+    </main>
+
+    <script>
+        let application = document.getElementById("application");
+        let signout = document.getElementById("signout");
+        let section = document.getElementById("one");
+        let bar = document.getElementById("bar");
+        let photo1 = document.getElementById("photo");
+    
+        application.addEventListener("click", () => {
+            setTimeout(() => {
+                window.location.href = "page1.html";  
+            }, 2000);
+        });
+    
+        signout.addEventListener("click", () => {
+            setTimeout(() => {
+                window.location.href = "form.html";  
+            }, 2000);
+        });
+    
+        let leftside = document.getElementById("left-side");
+        leftside.style.transitionProperty = "transform";
+        leftside.style.transform = "translateX(-300px)";
+        section.style.gridTemplateColumns = "0px 1fr";
+    
+        bar.addEventListener("click", () => {
+            leftside.style.display = "flex";
+            section.style.gridTemplateColumns = "300px 1fr";
+            leftside.style.transitionProperty = "transform";
+            leftside.style.transform = "translateX(0px)";
+        });
+    
+        let cross = document.getElementById("cross");  
+        cross.addEventListener("click", () => {
+            leftside.style.display = "none";
+            section.style.gridTemplateColumns = "1fr";
+        });
+    
+        window.addEventListener("load", () => {
+            let userData = JSON.parse(localStorage.getItem("userData")) || [];
+            let loginUserData = JSON.parse(localStorage.getItem("loginUserData")) || [];
+            let match = userData.filter(user => {
+                return loginUserData.some(loginUser => 
+                    loginUser.userId === user.userId &&
+                    loginUser.userPW === user.userPW 
+                );
+            });
+    
+            var hi = document.getElementById("hi");
+            hi.style.display = "none";
+            
+            let stopTimeOut;
+            match.forEach(e => {
+             stopTimeout = setTimeout(() => {
+                    hi.style.display = "flex";
+                    let h1 = document.getElementById("name_blank");
+                    h1.innerHTML = `Hi ${e.userId}, Welcome To Your Profile`;
+                    h1.style.color = "white";
+                    h1.style.fontSize = "40px";
+                    let loginUserData = JSON.parse(localStorage.getItem("loginUserData")) || [];
+        if (loginUserData.length > 0) {
+            // Access the last user's image (fixed property name)
+            let userPhoto = loginUserData[loginUserData.length - 1].imge; // Corrected from userPhoto to imge
+            if (userPhoto) {
+                photo1.src = userPhoto; // Set the photo source correctly
+            } else {
+                console.log("No user photo found in loginUserData."); // Added logging
+            }
+        } else {
+            console.log("No login user data found in localStorage."); // Added logging
+        }
+                }, 3200);
+            });
+        });
+    
+        let cross2 = document.getElementById("cross2");
+        cross2.style.color = "white";
+        cross2.style.fontSize = "30px";
+        cross2.style.color = "red";
+    
+        cross2.addEventListener("click", () => {
+            hi.style.display = "none";
+        });
+    
+        // Correctly retrieve and display user image
+   
+    </script>
+    <!-- window.addEventListener("load", () => {
+    let userData = JSON.parse(localStorage.getItem("userData")) || [];
+    let loginUserData = JSON.parse(localStorage.getItem("loginUserData")) || [];
+    let matches = userData.filter(user => {
+        return loginUserData.some(loginUser => 
+            loginUser.UserName === user.UserName &&
+            loginUser.userID === user.userID &&
+            loginUser.userPassword === user.userPassword
+        );
+    });
+
+    let blank = document.getElementById("blank");
+    blank.style.display = "none";
+    console.log("Matching users:", matches);
+    
+    let stopTimeOut;
+    // let timeoutExecuted = localStorage.getItem("timeoutExecuted");
+
+    // if (!timeoutExecuted) {
+        matches.forEach(e => {
+            stopTimeOut = setTimeout(() => {
+                let heading = document.createElement("h1");
+                blank.style.display = "grid";
+                heading.innerHTML = `Hii ${e.UserName} Welcome To Your Profile `;
+                document.getElementById("blank").appendChild(heading);
+                document.getElementById("login_user_Profilename").innerHTML=e.UserName
+                document.getElementById("login_user_profile_Photo").src=e.userPhoto
+            }, 4000);
+        });
+
+        // localStorage.setItem("timeoutExecuted", "true");
+    // }
+});
+
+let blankRemove = document.getElementById("blankRemove");
+blankRemove.innerHTML = `<i class="fa-solid fa-square-xmark" id="blank_remove"></i>`;
+document.getElementById("blank_remove").addEventListener("click", () => {
+    let blank = document.getElementById("blank");
+    blank.style.display = "none";
+    clearTimeout(stopTimeOut);
+}); -->
+
+</body>
+</html>

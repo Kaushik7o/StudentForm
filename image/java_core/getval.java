@@ -1,0 +1,131 @@
+import java.util.Scanner;
+@FunctionalInterface
+interface cars
+{
+	
+public String getValues1();
+}
+class car 
+{
+	final String fuel="diesel";
+	
+	final int wheels=4;
+	
+	String color;
+	String model;
+	
+	
+}
+
+class ford extends car
+{
+	private String color;
+	private String model;
+	   public void setValue1(String b,String c){
+		
+         
+		 color=b;
+		 model=c;
+		
+		}
+		
+}
+class mercedes extends car
+{
+	private String color;
+	private String model;
+		   public void setValue2(String b,String c){
+		
+         
+		 color=b;
+		 model=c;
+		
+		}
+	
+}
+class audi extends car
+{
+	private String color;
+	private String model;
+	   public void setValue3(String b,String c){
+		
+         
+		 color=b;
+		 model=c;
+		
+		}
+	
+}
+
+public class getval
+{
+	public static void main(String [] args)
+	{
+	cars fort=new cars()
+	{
+	public String getValues1()
+		{
+        return fuel+" "+color+" "+model+" "+wheels;
+		}
+		
+	
+
+    
+	};
+
+
+    cars mer=new cars()
+	{
+    public String getValues1()
+		{
+        return fuel+" "+color+" "+model+" "+wheels;
+		}
+		
+	};
+
+
+	cars aud=new cars()
+	{
+ public String getValues1()
+		{
+        return fuel+" "+color+" "+model+" "+wheels;
+		}
+		
+	};
+	System.out.println("Enter the valuesof b and c");
+    Scanner s3=new Scanner(System.in);
+		
+		String b=s3.next();
+		String c=s3.next();
+		
+		
+		char k='y';
+
+do{
+	System.out.println("Enter a choice");
+    int x=s3.nextInt();
+	System.out.println("1 - mercedese");
+	System.out.println("2 - audi");
+	System.out.println("3 - ford");
+
+		switch(x)
+	{
+			case 1:
+	    mer.setValue2(b,c);
+	//System.out.println(mer.getValue());
+	break;
+	        case 2:
+      aud.setValue3(b,c);
+	//System.out.println(aud.getValue());
+	break;
+	case 3:
+ fort.setValue1(b,c);
+	//System.out.println(for.getValue());
+	break;
+	}
+System.out.println("do you wish to continue");
+k=s.next().charAt(0);
+}while(k=='y');
+	
+}
+}

@@ -1,0 +1,49 @@
+class student 
+{
+	private String name;
+	private double gpa;
+
+	student(String name,double gpa)
+	{
+    this.name=name;
+	this.gpa=gpa;
+	}
+
+	student(student s)
+	{
+	this.name=s.getName();
+   this.gpa=s.getGpa();
+	}
+
+	public String getName()
+	{
+     return name;
+	}
+
+	public void setName(String name)
+	{
+    this.name=name;
+	}
+
+    public double getGpa()
+	{
+     return gpa;
+	}
+
+	public void setGpa(double gpa)
+	{
+     this.gpa=gpa;
+	}
+}
+	public class getsetClone
+	{
+	
+	public static void main(String[] args) 
+	{
+		student s1=new student("justin",8.5);
+		student cloneOfs1=new student(s1);
+		s1.setName("jessica");
+		System.out.println("Student-s1: "+s1.getName());
+		System.out.println("Student-s2: "+cloneOfs1.getName());
+	}
+}

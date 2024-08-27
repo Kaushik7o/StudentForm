@@ -1,0 +1,22 @@
+import java.util.*;
+class bb
+{
+	public static void main(String[] args) 
+	{
+		bb o=new bb();
+		
+		System.out.println(o.m1(5));
+	}
+    public static int m1(int d)
+	{
+     Scanner sc=new Scanner(System.in);
+	 d=sc.nextInt();
+	 
+	 return d;
+
+	}
+
+
+
+}
+

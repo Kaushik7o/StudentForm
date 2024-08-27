@@ -1,0 +1,27 @@
+class explicit 
+{
+	public static void main(String[] args) 
+	{
+     /*int x=10;
+	 byte b=(byte)x;
+	 System.out.println(b);
+
+	 float f=20;
+	 int i=(int)f;
+	 System.out.println(i);
+
+	 float ff=40;
+	 long l=(long)ff;
+	 System.out.println(l);*/
+
+    //int x=130;
+	//byte b=(byte)x;
+	//System.out.println(b);//-126//
+
+     int k=500;
+	 short s=(short)k;
+	 System.out.println(s);
+
+		System.out.println("Hello World!");
+	}
+}

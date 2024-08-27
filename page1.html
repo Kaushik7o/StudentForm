@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./page1.css">
+</head>
+<body>
+    <div id="main">
+        <div id="div_scroll">
+            <div id="scroll"></div>
+            <button id="btnPersonal">Personal Details</button>
+            <button id="btnEducation">Education Details</button>
+            <button id="btnApply">Apply Course</button>
+            <button id="btnPreview">Preview</button>
+        </div>
+        <div id="form_container">
+            <!-- Personal Details -->
+            <form id="personal">
+                <b id="welcome"></b>
+                <h1>Personal Details</h1>
+                <div id="name_con">
+                    <span><label for="first">Firstname</label><input type="text" id="first" required></span>
+                    <span><label for="middle">Middlename</label><input type="text" id="middle" required></span>
+                    <span><label for="last">Lastname</label><input type="text" id="last" required></span>
+                </div>
+                <span><label for="f">Father's name</label><input type="text" id="f" required></span>
+                <span><label for="mom">Mother's name</label><input type="text" id="mom" required></span>
+                <span><label for="email">Email ID</label><input type="email" id="email" placeholder="Enter email" required></span>
+                <span><label for="number">Phn No</label><input type="tel" id="number" pattern="[0-9]{10}" required></span>
+                <span style="display: flex; flex-direction: column; align-items: start;">
+                    <label for="file" style="color: red; font-size: 15px;">*passport size photo between 50 to 100KB</label>
+                    <input type="file" id="file" accept="image/*" required>
+                </span>
+                <select id="state" required>
+                    <option value="select">Select state</option>
+                    <option value="Odisha">Odisha</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Kolkata">Kolkata</option>
+                    <option value="Chennai">Chennai</option>
+                </select>
+                <span>
+                    <p>Enter Street</p>
+                    <textarea id="your_details" placeholder="Your address" rows="4" cols="50" required></textarea>
+                </span>
+                <span id="check">
+                    <p>Preferred Language</p>
+                    <div>
+                        <span><input type="radio" id="Odia" name="op" value="odia"><label for="Odia">Odia</label></span>
+                        <span><input type="radio" id="hindi" name="op" value="hindi"><label for="hindi">Hindi</label></span>
+                        <span><input type="radio" id="English" name="op" value="english"><label for="English">English</label></span>
+                        <span><input type="radio" id="other" name="op" value="other"><label for="other">Other</label></span>
+                    </div>
+                </span>
+                <div id="confirm">
+                    <input type="submit" id="submit" value="Save">
+                    <button id="Next">Next</button>
+                </div>
+            </form>
+
+            <!-- Education Details -->
+            <form id="education">
+                <span>
+                    <p>Have you completed a course equivalent to PG?</p>
+                    <span><input type="radio" name="ok" value="yes"><label>Yes</label></span>
+                    <span><input type="radio" name="ok" value="no"><label>No</label></span>
+                </span>
+                <span>
+                    <p>Select University</p>
+                    <select id="university">
+                        <option value="">Select</option>
+                        <option value="gita">GITA Autonomous College</option>
+                        <option value="cv raman">CV Raman University</option>
+                        <option value="kiit">KIIT University</option>
+                        <option value="utkal">Utkal University</option>
+                    </select>
+                </span>
+                <span>
+                    <b>Select Course below</b>
+                    <select id="course">
+                        <option value="">MCA</option>
+                        <option value="">BSC</option>
+                        <option value="">Post Graduation (PG)</option>
+                        <option value="">BCA</option>
+                    </select>
+                </span>
+                <span>
+                    <b>Enter Registration Number</b>
+                    <input type="text" id="r_no">
+                </span>
+                <span>
+                    <p>Secured Mark/CGPA</p>
+                    <input type="text" placeholder="Enter mark in %" id="mark">
+                </span>
+                <span>
+                    <p>Select College</p>
+                    <select id="college">
+                        <option value="">Select</option>
+                        <option value="">Christ College</option>
+                        <option value="">Netaji College</option>
+                        <option value="">M.C. Autonomous College</option>
+                    </select>
+                </span>
+                <div id="confirm_2">
+                    <input type="submit" id="submit_2" value="Save">
+                    <button id="prev2">Previous</button>
+                    <button id="Next_2">Next</button>
+                </div>
+            </form>
+
+            <!-- Application -->
+            <form id="application">
+                <span>
+                    <b>Select Course you want to Enroll</b>
+                    <select id="clist">
+                        <option value="">MTech</option>
+                        <option value="">MPharma</option>
+                        <option value="">MCom</option>
+                        <option value="">Architect</option>
+                    </select>
+                </span>
+                <span>
+                    <p>Enter the exam location</p>
+                    <select id="center">
+                        <option value="">Cuttack</option>
+                        <option value="">Bhubaneswar</option>
+                        <option value="">Kolkata</option>
+                        <option value="">Chennai</option>
+                    </select>
+                </span>
+                <div id="confirm_3">
+                    <input type="submit" id="submit_3" value="Save">
+                    <button id="prev3">Previous</button>
+                    <button id="Next_3">Next</button>
+                </div>
+            </form>
+
+            <!-- Preview -->
+            <form id="preview">
+                <p>Terms and conditions</p>
+                <span style="display: flex; align-items: start;">
+                    <input type="checkbox" id="agree" name="term" style="position: relative; top: 5px;" required>
+                    <p>I hereby declare that the above information is true and correct to the best of my knowledge and belief. I take full responsibility that if in the future, the paper is found invalid according to basic rules, the last decision will be of the Authorities concerned. Any form of plagiarism will lead to disqualification of the paper.</p>
+                </span>
+                <div id="confirm_4">
+                    <button id="prev4">Previous</button>
+                    <input type="submit" id="submit_4" value="Submit">
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        // Get references to forms and buttons
+        let personal = document.getElementById("personal");
+        let education = document.getElementById("education");
+        let application = document.getElementById("application");
+        let preview = document.getElementById("preview");
+        let Next = document.getElementById("Next");
+        let Next_2 = document.getElementById("Next_2");
+        let Next_3 = document.getElementById("Next_3");
+        let prev2 = document.getElementById("prev2");
+        let prev3 = document.getElementById("prev3");
+        let prev4 = document.getElementById("prev4");
+        let submit = document.getElementById("submit");
+        let submit2 = document.getElementById("submit_2");
+        let submit3 = document.getElementById("submit_3");
+        let submit4 = document.getElementById("submit_4");
+        let scroll = document.getElementById("scroll");
+        let form_container = document.getElementById("form_container");
+        let userpic = document.getElementById("file");
+
+        // Initialize form states
+        education.style.display = "none";
+        application.style.display = "none";
+        preview.style.display = "none";
+
+        // Navigation Event Listeners
+        Next.addEventListener("click", (e) => {
+            e.preventDefault();
+            let allInputsFilled = Array.from(personal.querySelectorAll("input")).every(input => input.value.trim() !== "");
+            if(!allInputsFilled)
+        {
+            alert("first fill all the fields")
+        }
+        else{
+            personal.style.display = "none";
+            education.style.display = "flex";
+            application.style.display = "none";
+            preview.style.display = "none";
+            scroll.style.transform = "translateX(150px)";
+            scroll.style.transition = "transform 0.5s linear";
+            form_container.style.backgroundColor = "blueviolet";
+          
+        }
+        });
+
+        Next_2.addEventListener("click", (e) => {
+            e.preventDefault();
+            let allInputsFilled = Array.from(personal.querySelectorAll("input")).every(input => input.value.trim() !== "");
+            if(!allInputsFilled)
+        {
+            alert("first fill all the fields")
+        }
+        else
+        {
+            personal.style.display = "none";
+            education.style.display = "none";
+            application.style.display = "flex";
+            preview.style.display = "none";
+            scroll.style.transform = "translateX(300px)";
+            scroll.style.transition = "transform 0.5s linear";
+            form_container.style.backgroundColor = "bisque";
+           
+        }
+        });
+
+        Next_3.addEventListener("click", (e) => {
+            e.preventDefault();
+            let allInputsFilled = Array.from(personal.querySelectorAll("input")).every(input => input.value.trim() !== "");
+            if(!allInputsFilled)
+        {
+            alert("first fill all the fields")
+        }
+        else{
+            personal.style.display = "none";
+            education.style.display = "none";
+            application.style.display = "none";
+            preview.style.display = "flex";
+            scroll.style.transform = "translateX(450px)";
+            scroll.style.transition = "transform 0.5s linear";
+            form_container.style.background = "rgb(255, 254, 196)";
+         
+        }
+        });
+
+        prev2.addEventListener("click", (e) => {
+            e.preventDefault();
+            personal.style.display = "flex";
+            education.style.display = "none";
+            application.style.display = "none";
+            preview.style.display = "none";
+            scroll.style.transform = "translateX(0px)";
+            scroll.style.transition = "transform 0.5s linear";
+            form_container.style.background = "rgb(255, 254, 196)";
+        });
+
+        prev3.addEventListener("click", (e) => {
+            e.preventDefault();
+            personal.style.display = "none";
+            education.style.display = "flex";
+            application.style.display = "none";
+            preview.style.display = "none";
+            scroll.style.transform = "translateX(150px)";
+            scroll.style.transition = "transform 0.5s linear";
+            form_container.style.background = "blueviolet";
+        });
+
+        prev4.addEventListener("click", (e) => {
+            e.preventDefault();
+            personal.style.display = "none";
+            education.style.display = "none";
+            application.style.display = "flex";
+            preview.style.display = "none";
+            scroll.style.transform = "translateX(300px)";
+            scroll.style.transition = "transform 0.5s linear";
+            form_container.style.background = "bisque";
+        });
+
+        // Form Submission Handling
+        personal.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let New_User_Photo = userpic.files[0];
+            if (!New_User_Photo) {
+                alert("Please select a file.");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const img = new Image();
+                img.src = e.target.result;
+
+                img.onload = function () {
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    const maxSize = 500;
+
+                    let width = img.width;
+                    let height = img.height;
+
+                    if (width > height) {
+                        if (width > maxSize) {
+                            height *= maxSize / width;
+                            width = maxSize;
+                        }
+                    } else {
+                        if (height > maxSize) {
+                            width *= maxSize / height;
+                            height = maxSize;
+                        }
+                    }
+
+                    canvas.width = width;
+                    canvas.height = height;
+                    ctx.drawImage(img, 0, 0, width, height);
+                    const resizeImage = canvas.toDataURL('image/jpeg', 0.7);
+
+                    localStorage.setItem("imgpic", resizeImage);
+                };
+            };
+            reader.readAsDataURL(New_User_Photo);
+
+            localStorage.setItem("firstN", document.getElementById("first").value);
+            localStorage.setItem("middleN", document.getElementById("middle").value);
+            localStorage.setItem("lastN", document.getElementById("last").value);
+            localStorage.setItem("father", document.getElementById("f").value);
+            localStorage.setItem("mother", document.getElementById("mom").value);
+            localStorage.setItem("emailId", document.getElementById("email").value);
+            localStorage.setItem("num", document.getElementById("number").value);
+            localStorage.setItem("stateInfo", document.getElementById("state").value);
+            localStorage.setItem("addressInfo", document.getElementById("your_details").value);
+
+
+            let lang = document.querySelector('input[name="op"]:checked');
+            if (lang) {
+                localStorage.setItem("language", lang.value);
+            }
+
+            // Clear input fields
+            
+        });
+
+        education.addEventListener("submit", (e) => {
+            e.preventDefault();
+            localStorage.setItem("universityId", document.getElementById("university").value);
+            let ok = document.querySelector('input[name="ok"]:checked')?.value;
+            localStorage.setItem("choice", ok);
+            localStorage.setItem("course", document.getElementById("course").value);
+            localStorage.setItem("collegeN", document.getElementById("college").value);
+            localStorage.setItem("markN", document.getElementById("mark").value);
+            localStorage.setItem("rNov", document.getElementById("r_no").value);
+            let okk = document.querySelector('input[name="ok"]:checked');
+            if (okk) {
+                localStorage.setItem("ok", okk.value);
+            }
+        });
+
+        application.addEventListener("submit", (e) => {
+            e.preventDefault();
+            localStorage.setItem("Clist", document.getElementById("clist").value);
+            localStorage.setItem("Center", document.getElementById("center").value);
+        });
+
+        preview.addEventListener("submit", (e) => {
+            e.preventDefault();
+    
+            let term = document.querySelector('input[name="term"]:checked');
+            if (term) {
+                localStorage.setItem("Agree", term.value);
+            }
+            window.location.href = "preview.html";
+         term.value="";
+         document.getElementById("first").value = "";
+            document.getElementById("middle").value = "";
+            document.getElementById("last").value = "";
+            document.getElementById("f").value = "";
+            document.getElementById("mom").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("number").value = "";
+            document.getElementById("state").value = "";
+            document.getElementById("your_details").value = "";
+            document.getElementById("university").value="";
+         
+         
+           
+         document.getElementById("course").value="";
+          document.getElementById("college").value="";
+           document.getElementById("mark").value="";
+       document.getElementById("r_no").value="";
+       document.getElementById("clist").value="";
+       document.getElementById("center").value="";
+       document.getElementById("file").value="";
+        });
+    </script>
+</body>
+</html>

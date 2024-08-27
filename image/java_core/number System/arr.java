@@ -1,0 +1,35 @@
+class arr 
+{
+	public static void main(String[] args) 
+	{
+		int a[]={1,2,3,6,7};
+		int b[]={34,5,6,7,9};
+
+        int c[];
+
+		System.out.println("before sorting values of a are:");
+        for(int i=0;i<a.length;i++)
+		{
+        System.out.println(a[i]);
+		}
+		System.out.println("before sorting values of b are:");
+		for(int j=0;j<b.length;j++)
+		{
+        System.out.println(b[j]);
+		}
+		c=a;
+		a=b;
+		b=c;
+	System.out.println("After sorting values of a are:");
+for(int i=0;i<a.length;i++)
+		{
+        System.out.println(a[i]);
+		}
+    System.out.println("After sorting values of b are:");
+		for(int j=0;j<b.length;j++)
+		{
+        System.out.println(b[j]);
+		}
+
+	}
+}

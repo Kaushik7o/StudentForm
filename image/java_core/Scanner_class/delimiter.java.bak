@@ -1,0 +1,11 @@
+import java.util.Scanner;
+class delimiter  
+{
+	public static void main(String[] args) 
+	{
+		System.out.println("Enter your name");
+		String sc = new Scanner(System.in).nextLine();
+        sc.delimiter();
+		System.out.println("name :-"+sc);
+	}
+}

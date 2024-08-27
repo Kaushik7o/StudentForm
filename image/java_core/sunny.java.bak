@@ -1,0 +1,16 @@
+class sunny 
+{
+	public static void main(String[] args) 
+	{
+	int x=80;
+	x=x+1;
+	if(x%Math.sqrt(x)==0)
+		{
+System.out.println("sunny number");
+		}
+		else{
+System.out.println("not sunny number");
+
+		}
+	}
+}

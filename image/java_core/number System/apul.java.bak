@@ -1,0 +1,11 @@
+class apul 
+{
+	int apul()
+	{
+
+	}
+	public static void main(String[] args) 
+	{
+		apul a=new apul();
+	}
+}

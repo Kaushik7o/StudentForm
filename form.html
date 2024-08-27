@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./form.css">
+</head>
+<body>
+   <main>
+
+   <div id="login">
+    <form action="" id="form_login">
+    <h1>Login</h1>
+    <span class="data"><input type="text" placeholder="Username" id="username"><i class="fa-solid fa-user"></i></span>
+    <span class="data"><input type="password" placeholder="Password" id="userpass"><span id="lock"></span></span>
+    <input type="file" id="img" style="place-self: start;padding-left: 34px;">
+     <div id="check"><span><input type="checkbox"><b>Remember me</b></span><span id="forgot_pass"><p>Forgot password?<p></span></div>
+     <button id="login_btn">Login</button>
+     <span id="register"><b>Don't have an account?</b><span id="register" style="cursor: pointer;"><b style="color: rgb(160, 160, 160);">Register</b></span></span>
+    </form> </div>
+  
+
+   
+    <div id="signup">
+      <form action="" id="form_signup">
+      <h1>SignUp</h1>
+      <span class="data"><input type="text" placeholder="Username" id="new_username"><i class="fa-solid fa-user"></i></span>
+      <span><input type="email" placeholder="Enter email" id="email"><i class="fa-regular fa-envelope"></i></span>
+      <span class="data"><input type="password" placeholder="Password" id="new_userpass"><span id="lock2"></span></span>
+      <span id="data2"><input type="password" placeholder="Password" id="confirm_pass"><span id="lock3"></span></span>
+      <button id="signup_btn">Signup</button>
+      <div id="goto_log"><b>Goto Login Page<i class="fa-solid fa-right-to-bracket"></i></b></div>
+    </form>
+       
+     </div>
+
+   </main>
+   <script src="./form.js"></script>
+</body>
+</html>

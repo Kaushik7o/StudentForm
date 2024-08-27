@@ -1,0 +1,26 @@
+class patt 
+{
+	public static void main(String[] args) 
+	{
+		
+		int x=1;
+		int y;
+		int t;
+		for(int i=5;i>=1;i--)
+		{
+			y=i;
+			t=x;
+		
+for(int j=5;j>=i;j--)
+			{
+
+				System.out.print(t);
+				t=t-y;
+				y++;
+		
+			}
+			x=x+i;
+		System.out.println();
+		}
+	}
+}

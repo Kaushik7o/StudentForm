@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+#item{
+    height:100px;
+}
+#main{
+    height:100%;
+    width:100%;
+    display:grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    justify-content: center;
+    gap:10px;
+    grid-auto-rows: 300px;
+    
+}
+</style>
+<body>
+    <div id="item">
+    <form action="" id="grocery">
+    <input type="text" placeholder="Enter text" id="text">
+    <input type="number" name="" id="number" placeholder="Enter price">
+    <input type="datetime-local" id="date">
+    <input type="file" id="photo">
+    <input type="submit">
+    </form>
+
+</div>
+
+<div id="main"></div>
+</body>
+
+<script>
+    let item=document.getElementById("text")
+    let item_price=document.getElementById("number")
+    let current_time=document.getElementById("date")
+    let photoFile=document.getElementById("photo")
+    let grocery=document.getElementById("grocery")
+
+    grocery.addEventListener("submit",(e)=>
+    {
+        e.preventDefault()
+     let item_name_value=item.value
+     let item_price_value=item_price.value;
+     let current_time_value=current_time.value
+     let photo=photoFile.files[0]
+     let photoURL=URL.createObjectURL(photo)
+     GroceryItem(item_name_value,item_price_value,current_time_value,photoURL)
+
+    })
+
+    function GroceryItem(name,price,time,photoUrl)
+    {
+    let maindiv=document.createElement("div")
+    let photo=document.createElement("img")
+    photo.style.height="100px"
+    photo.style.width="100px"
+    photo.src=photoUrl
+
+    let user_name=document.createElement("h1")
+    user_name.innerHTML=name
+
+    let user_price=document.createElement("h3")
+    user_price.innerHTML=price
+
+    let user_time=document.createElement("h3")
+    user_time.innerHTML=time
+
+    maindiv.appendChild(photo)
+    maindiv.appendChild(user_name)
+    maindiv.appendChild(user_price)
+    maindiv.appendChild(user_time)
+   
+    document.getElementById("main").appendChild(maindiv)
+
+    
+    }
+</script>
+</html>

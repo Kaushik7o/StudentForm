@@ -1,0 +1,29 @@
+import java.util.Scanner;
+class s
+{
+	static
+	{
+		System.out.println("its a static block");
+		System.out.println("------------------");
+		y.m1(5);
+		System.exit(0);
+
+	}
+	public static void main(String[]args){}
+}
+class y
+{
+	public static void m1(int...x)
+	{
+		System.out.println("itsa int var arg method");
+		for (int k:x)
+		{
+			int fact=1;
+			for(int i=k;i>0;i--)
+			{
+				fact=fact*i;
+		}
+		System.out.println("the factorial is ---"+fact);
+		}
+	}
+}

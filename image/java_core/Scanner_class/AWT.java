@@ -1,0 +1,13 @@
+package com.java_1;
+import java .io.*;
+import java .io.IOException;
+class AWT_4
+{
+	public static void main(String[] args) throws IOException
+	{
+        BufferedReader s=new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("ENTER A NUMBER");
+		int x=System.in.read();
+		System.out.println(x);
+	}
+}

@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    main{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgb(3, 4, 36);
+    }
+    /* #brown{
+
+    } */
+    #brown{
+        position:relative ;
+        width: 400px;
+        height: 300px;
+        background: repeating-conic-gradient(from var(--a),#ff2770 0%,#ff2770 5%,transparent 5%,transparent 40%, #ff2770 50%);
+        animation: animate 4s linear infinite;
+        border-radius: 20px;
+        z-index: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    @property --a{
+        syntax: '<angle>';
+            inherits: false;
+            initial-value: 0deg;
+    }
+    @keyframes animate{
+        0%
+        {
+            --a: 0deg;
+        }
+        100%{
+            --a: 360deg;
+        }
+    }
+    #brown::before{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: repeating-conic-gradient(from var(--a),#45f3ff 0%,#45f3ff 5%,transparent 5%,transparent 40%, #45f3ff 50%);
+        animation: animate 4s linear infinite;
+        animation-delay: -1s;
+        border-radius: 20px; z-index: 2;
+    }
+    #brown::after{
+        content: '';
+        position: absolute;
+        inset: 8px;
+        background: #2d2d39;
+        border-radius: 15px;
+        border: 8px solid #25252b; z-index: 2;
+        
+    }
+    #white{
+     height: 80%;
+     width: 80%;
+     background-color:#2d2d39;
+     border-radius: 20px;
+     z-index: 20000;
+     color: white;
+display: flex;
+flex-direction: column;
+
+justify-content: center;
+align-items: center;
+gap: 20px;
+    }
+    #white div #cont{
+        padding: 10px;
+        border: 1px solid white;
+        width: 200px;
+        height: 16px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+    }
+    #white div #cont #p{
+font-style: italic;
+font-family: cursive;
+font-size: 24px;
+letter-spacing: 20px;
+padding-bottom: 7px;
+    }
+    #white div {
+        display: flex;
+        gap: 4px;
+
+    }
+    button{
+        display: flex;
+        gap: 4px;
+        justify-content: center;
+        align-items: center;
+        background-color: green;
+        border: 1px solid white;
+        padding: 0px 10px 0px 10px;
+        border-radius: 4px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;font-size: 16px;
+    }
+    input{
+        width: 296px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left:10px;
+        padding-right: 10px;
+        outline:none ;
+        font-size: 17px;
+        font-weight: 600;
+        letter-spacing: 2px;
+    }
+    input::placeholder{
+        font-weight: 540;
+        font-size: 17px;
+       
+    }
+    
+    #white #star{
+        color: rgb(53, 139, 3);
+    }
+    #submit{
+        padding: 10px;
+        color: white;
+        font-weight: 600;
+        letter-spacing: 3px;
+        font-size: 16px;
+        background: rgb(73,83,190);
+        background: linear-gradient(90deg, rgb(190, 149, 73) 32%, rgba(110,81,195,1) 76%, rgb(22, 171, 164) 100%);
+        border-radius: 4px;
+    }
+   
+</style>
+<body>
+    <main>
+        <form action="" id="change_password">
+    <div id="brown">
+     <div id="white">
+        <input type="text" placeholder="Enter userId"  id="user_user_id">
+        <input type="password" placeholder="Enter newPassword" id="pass_f">
+        <input type="password" placeholder="Re-Enter Password" id="pass_s"> 
+       
+        <input type="submit" id="submit">
+     </div>
+    </div>
+</form>
+</main>
+
+<script>
+    
+   
+ var pass_f=document.getElementById("pass_f")   
+ var pass_s=document.getElementById("pass_s")  
+var change_password=document.getElementById("submit")
+
+ change_password.addEventListener("click",(e)=>
+ {
+ e.preventDefault() 
+ let user_id=document.getElementById("user_user_id").value
+ let fpass=pass_f.value
+ let spass=pass_s.value
+
+
+ if (spass!="" && fpass!="" )
+{ 
+  
+if(fpass==spass ) {
+    let userData = JSON.parse(localStorage.getItem("userData")) || []  
+   let check= userData.find(user => user.userId==user_id && user.userPW!==fpass) 
+   
+   if(check)
+   {
+       check.userPW=fpass
+       localStorage.setItem("userData", JSON.stringify(userData));
+       alert(`Password updated successfully!`);
+
+document.getElementById("user_user_id").value=""
+ pass_f.value=""
+ pass_s.value=""
+ setInterval(()=>
+ {
+ window.location.href="form.html"
+ },2000)
+
+   }
+   else if( userData.find(user =>  user.userPW===fpass) ){
+    alert("password can't be same as previous password")
+    alert("incorrect id and password")
+    document.getElementById("user_user_id").value=""
+ pass_f.value=""
+ pass_s.value=""
+   }
+}
+   
+    else {
+       alert("password mismatched");
+   }
+   }
+   else {
+   alert("Password can't be empty");
+   }
+
+
+})
+
+/* set_new_PW_BTN.addEventListener("click", (e) => {
+    e.preventDefault()
+  let  forgot_User_Name_value=  forgot_User_Name.value
+  let  forgot_User_ID_value= forgot_User_ID.value
+  let forgot_set_new_password_value=  forgot_User_Password.value
+  
+
+}) */
+  /* if (!forgot_User_Name.value=="" && !forgot_User_ID.value=="" && !forgot_User_Password.value=="") {
+   
+
+let storeUserData = JSON.parse(localStorage.getItem("userData")) || []
+
+let user = storeUserData.find(user => user.UserName == forgot_User_Name_value && user.userID == forgot_User_ID_value)
+console.log(user);
+if (user) {
+    user.userPassword = forgot_set_new_password_value;
+
+    localStorage.setItem("userData", JSON.stringify(storeUserData));
+    alert("Password updated successfully!");
+
+     forgot_User_Name.value=""
+    forgot_User_ID.value=""
+     forgot_User_Password.value=""
+     forgot_User_Confirm_Password.value=""
+
+     window.location.href="index.html"
+
+
+} else {
+    alert("User ID not found");
+}
+} else {
+alert("Please fill in all the fields");
+}
+}); */
+
+    </script>
+</body>
+</html>

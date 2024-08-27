@@ -1,0 +1,158 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#main{
+    min-height: 100%;
+    width: 100vw;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+}
+#div_scroll{
+    height: 50px;
+    width: 600px;
+    display: flex;
+    border-radius: 8px;
+    overflow: hidden;
+    position:relative;
+    box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.31);
+    margin-top:40px ;
+}
+#div_scroll>#scroll{
+    background-color: rgb(86, 197, 164);
+    
+}
+#div_scroll #scroll{
+ position: absolute;
+ top: 0px;
+ left: 0px;
+ z-index: 1000;
+}
+#div_scroll div,button{
+border: none;
+height: 50px;
+width: 150px;
+font-weight: 600;
+font-size: 15px;
+
+}
+#div_scroll button{
+    z-index:2000;
+    background-color: transparent;
+}
+#form_container{
+    min-height: 100%;
+    width: 90vw;
+    border: 1px solid gray;
+    
+}
+#name_con{
+    display: flex;
+   gap: 80px;
+}
+#name_con>span{
+display: flex;
+gap: 20px;
+align-items: center;
+}
+#name_con>span>input{
+    width: 200px;
+    padding: 4px;
+}
+#personal>span{
+    display: flex;
+gap: 20px;
+align-items: center;
+}
+#personal>span>input{
+    width: 400px;
+    padding: 4px;
+    
+}
+#personal
+{
+    padding-left: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: start;
+    padding-bottom: 30px;
+}
+#check{
+    display: flex;
+    gap: 30px;
+    
+    align-items: center;
+}
+#check>div{
+    display: flex;
+    gap: 40px;
+   align-items: center;
+}
+#check>div>span{
+    display: flex;
+    gap: 6px;
+   align-items: center;
+} 
+#form_container{
+    padding: 30px 0px 30px 0px;
+    position: relative;
+
+}
+#submit,#submit_2,#submit_3,#submit_4{
+    padding: 7px 50px;
+    border-radius: 50px;
+    background-color: rgba(103, 175, 151, 0.877);
+    color: white;
+    font-weight: 600;
+    border: none;
+    font-size: 16px;
+}
+#confirm, #confirm_2, #confirm_3, #confirm_4{
+    display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+ #Next,#Next_2,#Next_3,#Next_4{
+    padding: 7px 10px;
+    border-radius: 50px;
+    background-color: rgba(175, 144, 103, 0.877);
+    color: white;
+    border: none; 
+}
+#education{
+    background-color: blueviolet;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  padding: 30px 0px 30px 0px;
+  color: white;
+  padding-left: 40px;
+    
+}
+#application{
+    background-color: bisque;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+  padding: 30px 0px 30px 0px;
+  padding-left: 40px;
+}
+#preview{
+    background-color: rgb(255, 254, 196);
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+  padding: 30px 0px 30px 0px;
+  padding-left: 40px;
+}
+#prev2,#prev3,#prev4{
+padding: 7px 10px;
+    border-radius: 50px;
+    border: none; 
+}

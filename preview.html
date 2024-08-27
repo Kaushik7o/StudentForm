@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Details</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            height: 100%;
+            width: 100vw;
+            display: grid;
+            background-color: rgb(163, 162, 162);
+        }
+        main {
+            background-color: white;
+            height: 100%;
+            width: 80vw;
+            place-self: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #edit {
+            padding: 8px 25px;
+            border-radius: 50px;
+            border: none;
+            background-color: rgba(12, 143, 143, 0.705);
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        #print {
+            background-color: rgb(250, 137, 9);
+            color: white;
+            padding: 8px 25px;
+            border-radius: 50px;
+            border: none;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        #button {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        @media print {
+            body * {
+                display: none;
+            }
+            main, main * {
+                display: block;
+            }
+        }
+        p {
+            padding-left: 20px;
+        }
+        img {
+            width: 150px;
+            height: 150px;
+            padding-left: 20px;
+            position: absolute;
+            left: 70%;
+            top:18%;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <form action="" style="display: flex; flex-direction: column; gap: 30px;">
+            <h1 style="text-align: center;"><u>Personal Details</u></h1>
+            <div style="display: flex; justify-content: start; margin-top: 50px; gap: 40px;">
+                <p id="fN"></p>
+            </div>
+            <p id="F"></p>
+            <p id="M"></p>
+            
+            <p id="LN"></p>
+            <p id="Eml"></p>
+            <p id="ph"></p>
+            <img src="" alt="User Photo" id="photopic">
+            <p id="state1"></p>
+            <p id="MN"></p>
+            <p id="homeinfo"></p>
+            <div id="button">
+                <button id="edit">Edit</button>
+                <button type="button" id="print">Print</button>
+            </div>
+        </form>
+    </main>
+    <script>
+      
+
+        document.getElementById("print").addEventListener("click", (e) => {
+            e.preventDefault();
+            window.print();
+        });
+
+        // Retrieve and display data from localStorage
+        let firstName = localStorage.getItem("firstN");
+        let middleName = localStorage.getItem("middleN");
+        let lastName = localStorage.getItem("lastN");
+        let fatherName = localStorage.getItem("father");
+        let motherName = localStorage.getItem("mother");
+        let email = localStorage.getItem("emailId");
+        let phone = localStorage.getItem("num");
+        let userPhoto = localStorage.getItem("imgpic");
+        let state = localStorage.getItem("stateInfo");
+        let homeinfo=localStorage.getItem("addressInfo")
+
+        document.getElementById("fN").innerHTML = `NAME: ${firstName} ${middleName} ${lastName}`;
+        document.getElementById("F").innerHTML = `Father's Name: ${fatherName}`;
+        document.getElementById("M").innerHTML = `Mother's Name: ${motherName}`;
+        document.getElementById("Eml").innerHTML = `Email Id: ${email}`;
+        document.getElementById("ph").innerHTML = `Phone No: ${phone}`;
+        document.getElementById("photopic").src = userPhoto ? userPhoto : "";
+        document.getElementById("state1").innerHTML = `State: ${state}`;
+        document.getElementById("homeinfo").innerHTML=`Address: ${homeinfo}`;
+
+
+        document.getElementById("edit").addEventListener("click",(e)=>
+    {
+        e.preventDefault()
+        if(document.getElementById("edit").innerText=="Edit")
+    {
+        document.getElementById("edit").innerText="Save"
+        document.getElementById("fN").contentEditable=true
+        document.getElementById("F").contentEditable=true
+        document.getElementById("M").contentEditable=true
+        document.getElementById("Eml").contentEditable=true
+        document.getElementById("ph").contentEditable=true
+      
+        document.getElementById("state1").contentEditable=true
+        document.getElementById("homeinfo").contentEditable=true
+
+    }
+    })
+    </script>
+</body>
+</html>

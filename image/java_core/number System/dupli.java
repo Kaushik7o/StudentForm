@@ -1,0 +1,42 @@
+class dupli
+{
+	public static void main(String[] args) 
+	{
+		int size;
+		int a[]={1,2,3,7,3,4,5,5};
+		size=a.length;
+	     	for (int i=0;i<a.length-1;i++)
+		{
+		int temp;
+      if(a[i]>a[i+1])
+			{
+            temp=a[i];
+			a[i]=a[i+1];
+			a[i+1]=temp;
+			}	
+		}
+		
+		 	for(int i=0;i<size-1;i++)
+		{
+		
+                if(a[i]==a[i+1])
+				{
+                
+          for(int j=i;j<a.length-1;j++)
+					{
+
+                    a[j]=a[j+1];
+					}
+                size--;
+				}
+			
+				
+			}
+		
+
+		for(int i=0;i<size;i++)
+		{
+System.out.println(a[i]);
+		}
+	}
+}
